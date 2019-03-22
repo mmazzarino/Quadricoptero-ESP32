@@ -38,3 +38,4 @@ void read_mpu(float *ax, float *ay, float *az, float *gx, float *gy, float *gz, 
   *gx= ((0.98 *((*gx + gx2) *(*dt/1000000))) + (0.02 * ax2));
   *gy= ((0.98 *((*gy + gy2) *(*dt/1000000))) + (0.02 * ay2));
   *gz= ((0.98 *((*gz + gz2) *(*dt/1000000))) + (0.02 * az2));
+}
