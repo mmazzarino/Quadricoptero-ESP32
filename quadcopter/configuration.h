@@ -15,3 +15,9 @@
 #define c_mov_esq                  
 #define c_mov_dir
 #define tempo_press
+#define cp_acl                      //constante de proporcionalidade do acelerômetro
+#define cp_gir                      //constante de proporcionalidade do giroscópio    
+#define ci_acl                      //constante integrativa do acelerômetro
+#define ci_gir                      //constante integratica do giroscópio
+#define cd_acl                      //constante derivativa do acelerômetro
+#define cd_gir                      //constante derivativa do giroscópio

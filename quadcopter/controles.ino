@@ -10,11 +10,11 @@ void config_controles(){
 }
 
 void read_controls(int *vma, int *vmb, int *vmc, int *vmd){
-  if(c_sub == HIGH and *vma < 179 and *vmb < 179 and *vmc < 179 and *vmd < 179){
-    *vma += 9;
-    *vmb += 9;
-    *vmc += 9;
-    *vmd += 9;
+  if(c_sub == HIGH and *vma < 255 and *vmb < 255 and *vmc < 255 and *vmd < 255){
+    *vma += 4;
+    *vmb += 4;
+    *vmc += 4;
+    *vmd += 4;
     delay(tempo_press);
   }
 }
