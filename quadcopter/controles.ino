@@ -1,3 +1,6 @@
+#define tempo_aceleracao
+#define f_peso;
+
 void config_controles(){
   pinMode(c_sub, INPUT);                     
   pinMode(c_dec, INPUT);                      
@@ -10,11 +13,18 @@ void config_controles(){
 }
 
 void read_controls(int *vma, int *vmb, int *vmc, int *vmd){
-  if(c_sub == HIGH and *vma < 255 and *vmb < 255 and *vmc < 255 and *vmd < 255){
-    *vma += 4;
-    *vmb += 4;
-    *vmc += 4;
-    *vmd += 4;
-    delay(tempo_press);
+  if(c_sub == HIGH and *vma = 0 and *vmb = 0 and *vmc = 0 and *vmd = 0){
+    while((*vma < f_peso) and (*vmb < f_peso) and (*vmc < f_peso) and (*vmd < f_peso)){
+      *vma += 1;
+      *vmb += 1;
+      *vmc += 1;
+      *vmd += 1;
+    } 
+    delay(tempo_aceleracao);
   }
+  if(c_mov_fre = HIGH){
+    *sp_gx += 1;
+    delay(tempo_aceleracao);
+  }
+  
 }

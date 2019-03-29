@@ -6,8 +6,6 @@
 #define cd_acl
 #define cd_gir 
 
-
-
 class pid_estabilidade
 { 
   
