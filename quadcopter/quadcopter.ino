@@ -22,8 +22,9 @@ void loop() {
   dt = t_total - t_anterior;
   t_anterior = t_total;
   read_mpu(&ax, &ay, &az, &gx, &gy, &gz, &dt);
-  read_controls(&vma, &vmb, &vmc, &vmd);
-  controle_motores(&vma, &vmb, &vmc, &vmd, &sp_ax, &sp_ay, &sp_az, &sp_gx, &sp_gy, &sp_gz);
-  controle_pid_estabilidade(&ax, &ay, &az, &gx, &gy, &gz);
+  read_controls(&vma, &vmb, &vmc, &vmd, &sp_ax, &sp_ay, &sp_az, &sp_gx, &sp_gy, &sp_gz);
+  controle_pid_estabilidade(&ax, &ay, &az, &gx, &gy, &gz, &sp_ax, &sp_ay, &sp_az, &sp_gx, &sp_gy, &sp_gz, &vma, &vmb, &vmc, &vmd);
+  controle_motores(&vma, &vmb, &vmc, &vmd);
+  
   
   
