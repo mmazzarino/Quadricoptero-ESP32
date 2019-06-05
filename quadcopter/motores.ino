@@ -1,6 +1,6 @@
-void controle_motores(int *vma, int *vmb, int *vmc, int *vmd){
-  analogWrite(pma, *vma);
-  analogWrite(pmb, *vmb);
-  analogWrite(pmc, *vmc);
-  analogWrite(pmd, *vmd);
+void pinsMotorsInitialize(){
+   pinMode(pma, OUTPUT);
+   pinMode(pmb, OUTPUT);
+   pinMode(pmc, OUTPUT);
+   pinMode(pmd, OUTPUT);
 }

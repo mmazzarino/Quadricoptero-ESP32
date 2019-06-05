@@ -1,3 +1,13 @@
+#include<Wire.h>
+#include <WiFi.h>
+
+const char* ssid     = "embarcados";
+const char* password = "embarcados";
+int subir = 0;
+int giro = 0;
+int movX = 0;
+int movY = 0;
+
 #define MPU 0x68  //endere�o I2C do MPU6050
 #define CALIB 16071.82
 #define GRAVI 9.81
@@ -5,7 +15,8 @@
 #define pma                         //define pinos dos motores
 #define pmb                      
 #define pmc                      
-#define pmd                        
+#define pmd 
+                       
 #define c_sub                       //botões de controle
 #define c_dec                       
 #define c_gir_esq                  
