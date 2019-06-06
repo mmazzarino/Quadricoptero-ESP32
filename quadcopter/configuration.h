@@ -8,6 +8,11 @@ int giro = 0;
 int movX = 0;
 int movY = 0;
 
+int vma, vmb, vmc, vmd = 0;
+float ax, ay, az, gx, gy, gz = 0;                    
+float sp_ax, sp_ay, sp_az, sp_gx, sp_gy, sp_gz = 0;  
+unsigned long t_total, t_anterior, dt = 0;
+
 #define MPU 0x68  //endere�o I2C do MPU6050
 #define CALIB 16071.82
 #define GRAVI 9.81

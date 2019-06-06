@@ -1,25 +1,18 @@
 #include "configuration.h"
-               
-float ax, ay, az, gx, gy, gz = 0;                    
-float sp_ax, sp_ay, sp_az, sp_gx, sp_gy, sp_gz = 0;  //setpoints
-unsigned long t_total, t_anterior, dt = 0;
-
-int vma, vmb, vmc, vmd = 0;
 
 void setup() {
  Serial.begin(115200); 
  pinsMotorsInitialize();
  webServerInitialize();
- mpuInitialize(); 
+ mpuInitialize();
+ getDirecaoDecolagem(); 
 }
 
 void loop() {
-  t_total = micros();
-  dt = t_total - t_anterior;
-  t_anterior = t_total;
-
+  tempoCiclo();
   comunicacaoWebServer();
   setPointsInclinacao();
+  setPointsGiroZ();
   setPointsPotencia();
   
   
