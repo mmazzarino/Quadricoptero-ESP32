@@ -53,11 +53,11 @@ void setup() {
   Serial.println(WiFi.localIP());
 
   server.begin();
-  
+  String s = MAIN_page;
 }
 
 void loop(){
-     String s = MAIN_page; //Read HTML contents
+    
   WiFiClient client = server.available();   // Listen for incoming clients
 
   if (client) {                             // If a new client connects,
