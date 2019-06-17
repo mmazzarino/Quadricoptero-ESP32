@@ -7,8 +7,11 @@
 //#include "joystick_view.h"
 //#include "jquery.h"
 //#include "underscore.h"
+#include "joy.h"
+#include "joyJS.h"
+#include "joyMinJS.h"
 
-PImage back;
+
 
 void listDir(fs::FS &fs, const char * dirname, uint8_t levels){
     Serial.printf("Listing directory: %s\n", dirname);
@@ -45,6 +48,7 @@ void readFile(fs::FS &fs, const char * path){
     Serial.printf("Reading file: %s\n", path);
  
     File file = fs.open(path);
+    delay(1000);
     if(!file || file.isDirectory()){
         Serial.println("Failed to open file for reading");
         return;
@@ -152,7 +156,8 @@ void setup(){
         Serial.println("SPIFFS Mount Failed");
         return;
     }
-    
+
+ 
     
    // writeFile(SPIFFS, "/joystick-master_index.html", MainHtml);
   //  writeFile(SPIFFS, "/js/backbone-min.js", backBoneJS);
@@ -161,10 +166,21 @@ void setup(){
     //  writeFile(SPIFFS, "/js/jquery.js", jqueryJS);
    // writeFile(SPIFFS, "/js/underscore-min.js", underscoreJS);
    // writeFile(SPIFFS, "/img/button.png", butonPNG);
-    writeFile(SPIFFS, "/img/canvas.png", canvas.png);
+    //writeFile(SPIFFS, "/img/canvas.png", canvas.png);
    // 
-  
-    //readFile(SPIFFS, "/img/canvas.png");
+   
+  writeFile(SPIFFS, "/joy.html", joyHtml);
+ //writeFile(SPIFFS, "/joy.js", joyJs);
+ // writeFile(SPIFFS, "/joy.min.js", joyMinJs);
+   
+   // readFile(SPIFFS, "/joy.html");
+  //  Serial.println("/n/n-------------------------------------------------/n/n");
+
+      //readFile(SPIFFS, "/joy.js");
+ //   Serial.println("/n/n-------------------------------------------------/n/n");
+
+      //readFile(SPIFFS, "/joy.min.js");
+    //Serial.println("/n/n-------------------------------------------------/n/n");
     //deleteFile(SPIFFS, "/js/jquery.js");
    // renameFile(SPIFFS, "/hello.txt", "/foo.txt");
   //  readFile(SPIFFS, "/foo.txt");

@@ -1,11 +1,14 @@
 #include "configuration.h"
 
 void setup() {
- Serial.begin(115200); 
- pinsMotorsInitialize();
- webServerInitialize();
- mpuInitialize();
- getDirecaoDecolagem(); 
+  Serial.begin(115200); 
+  spiffsInitialize();
+  wifiInitialize();
+  startWebSocket();
+  serverInitialize();
+  mpuInitialize();
+  getDirecaoDecolagem(); 
+  pinsMotorsInitialize();
 }
 
 void loop() {
@@ -16,9 +19,9 @@ void loop() {
   setPointsPotencia();
   
   
-  read_mpu(&ax, &ay, &az, &gx, &gy, &gz, &dt);
+  read_mpu();
  
-  read_controls(&vma, &vmb, &vmc, &vmd, &sp_ax, &sp_ay, &sp_az, &sp_gx, &sp_gy, &sp_gz);
+
   controle_pid_estabilidade(&ax, &ay, &az, &gx, &gy, &gz, &sp_ax, &sp_ay, &sp_az, &sp_gx, &sp_gy, &sp_gz, &vma, &vmb, &vmc, &vmd);
   controle_motores(&vma, &vmb, &vmc, &vmd);
   

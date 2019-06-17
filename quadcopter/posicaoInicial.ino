@@ -1,3 +1,3 @@
-getDirecaoDecolagem{
-  sp_gz = gz;
+void getDirecaoDecolagem(){
+  sp_gz = gz; 
 }
