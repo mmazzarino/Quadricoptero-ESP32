@@ -7,9 +7,9 @@
 //#include "joystick_view.h"
 //#include "jquery.h"
 //#include "underscore.h"
-#include "joy.h"
-#include "joyJS.h"
-#include "joyMinJS.h"
+//#include "joy.h"
+//#include "joyJS.h"
+//#include "joyMinJS.h"
 
 
 
@@ -169,7 +169,7 @@ void setup(){
     //writeFile(SPIFFS, "/img/canvas.png", canvas.png);
    // 
    
-  writeFile(SPIFFS, "/joy.html", joyHtml);
+  //writeFile(SPIFFS, "/joy.html", joyHtml);
  //writeFile(SPIFFS, "/joy.js", joyJs);
  // writeFile(SPIFFS, "/joy.min.js", joyMinJs);
    

@@ -18,7 +18,6 @@ void loop() {
   setPointsGiroZ();
   setPointsPotencia();
   
-  
   read_mpu();
  
 
