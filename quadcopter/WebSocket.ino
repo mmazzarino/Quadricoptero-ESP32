@@ -1,3 +1,5 @@
+#include "configuration.h"
+
 void startWebSocket() { // Start a WebSocket server
   webSocket.begin();                          // start the websocket server
   webSocket.onEvent(webSocketEvent);          // if there's an incomming websocket message, go to function 'webSocketEvent'
@@ -17,8 +19,13 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t lenght
       }
       break;
     case WStype_TEXT:                     // if new text data is received
-      Serial.printf("[%u] get Text: %s\n", num, payload);
-
+      Serial.printf("[%u] get Text: %s", num, payload);
+      x = atoi((const char *)&payload[3]);
+      y = atoi((const char *)&payload[9]);
+      j = atoi((const char *)&payload[15]);
+      k = atoi((const char *)&payload[21]);
+      Serial.printf("         %d, %d, %d, %d \n", x, y, j, k);
+    }
       break;
   }
 }

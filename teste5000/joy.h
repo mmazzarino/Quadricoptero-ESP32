@@ -254,6 +254,9 @@ Direzione2:<input id="direzione2" type="text" /></br>
 
     <script type="text/javascript">
 
+var coordAntes;
+var coord;
+
 var joy = new JoyStick('joyDiv');
 
 var inputPosX = document.getElementById("posizioneX");
@@ -301,23 +304,22 @@ connection.onclose = function () {
 };
 
 function sendCoordenadas(){
-  var inputPosX = document.getElementById("posizioneX").value;
-  var inputPosY = document.getElementById("posizioneY").value;
-  var direzione = document.getElementById("direzione").value;
+ 
+  coordAntes = coord;
   var x = document.getElementById("X").value;
   var y = document.getElementById("Y").value;
-  
-  var inputPosJ = document.getElementById("posizioneJ").value;
-  var inputPosK = document.getElementById("posizioneK").value;
-  var direzione2 = document.getElementById("direzione2").value;
   var j = document.getElementById("J").value;
-  var k = document.getElementById("K").value;
-  
-  var coord = 'X: ' + x.toString(1) + '  Y: ' + y.toString(1) + '  J: ' + j.toString(1) + '  K: ' + k.toString(1);
-  console.log('teste: ' + coord);
-  connection.send(coord);
-}
-            
+  var k = document.getElementById("K").value; 
+  coord = 'X: ' + x.toString(1) + '  Y: ' + y.toString(1) + '  J: ' + j.toString(1) + '  K: ' + k.toString(1);
+    if(coordAntes != coord){  
+      console.log('Envia coordenadas: ' + coord);
+      connection.send(coord);
+      coordAntes = coord;
+    }
+    else{
+      null;
+    }
+}         
     </script>
   </body>
 </html> 

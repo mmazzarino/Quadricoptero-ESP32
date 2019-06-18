@@ -1,3 +1,6 @@
+#include "configuration.h"
+
 void getDirecaoDecolagem(){
-  sp_gz = gz; 
+  read_mpu();
+  gz_ini = gz; 
 }

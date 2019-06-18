@@ -1,39 +1,19 @@
-void setPointsInclinacao(){ 
-  switch(movX){
-    case -4: sp_gx = ; break;
-    case -3: sp_gx = ; break;
-    case -2: sp_gx = ; break;
-    case -1: sp_gx = ; break;
-    case 0:  sp_gx = ; break;
-    case 1:  sp_gx = ; break;
-    case 2:  sp_gx = ; break;
-    case 3:  sp_gx = ; break;
-    case 4:  sp_gx = ; break;
-    default: break;
-    }
+#include "configuration.h"
 
-  switch(movY){
-    case -4: sp_gy = ; break;
-    case -3: sp_gy = ; break;
-    case -2: sp_gy = ; break;
-    case -1: sp_gy = ; break;
-    case 0:  sp_gy = ; break;
-    case 1:  sp_gy = ; break;
-    case 2:  sp_gy = ; break;
-    case 3:  sp_gy = ; break;
-    case 4:  sp_gy = ; break;
-    default: break;
-    }
+void setPointsInclinacao(){ 
+  sp_gx = map(x, -100, 100, inclinacaoMinima, inclinacaoMaxima); 
+  sp_gy = map(y, -100, 100, inclinacaoMinima, inclinacaoMaxima);  
 }
 
 void setPointsGiroZ(){
-  switch(giro){
-    case -1: sp_gz -= ; giro = 0; break;
-    case 1:  sp_gz += ; giro = 0; break;
-    case 0:  null; break;
-    default: break;              
+  if((sp_gx == 0) and (sp_gy == 0)){
+    sp_gz = map(j, -100, 100, -180, 180) + gz_ini;          
   } 
+  else{
+    sp_gz = sp_gz;
+  }
 }
 
-void setPointsPotencia(){  
+void setPointsPotencia(){
+  coeficientePotencia = (float)k/100;  
 }

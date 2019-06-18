@@ -1,3 +1,5 @@
+#include "configuration.h"
+
 void wifiInitialize(){
   WiFi.begin(ssid, password);
  

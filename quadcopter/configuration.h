@@ -9,13 +9,26 @@ const char* password = "embarcados";
 
 int vma, vmb, vmc, vmd = 0;
 
+int x, y, j, k;
+
 int16_t ax1,ay1,az1,Tmp,gx1,gy1,gz1;
 float ax2,ay2,az2,gx2,gy2,gz2;
 float gx3,gy3,gz3;
-  
-float ax, ay, az, gx, gy, gz = 0;                    
+
+float erroX = 0;
+float erroY = 0;
+float erroZ = 0;
+
+
+float ax, ay, az, gx, gy, gz = 0; 
+float gz_ini;                   
 float sp_ax, sp_ay, sp_az, sp_gx, sp_gy, sp_gz = 0;  
 unsigned long t_total, t_anterior, dt = 0;
+
+int inclinacaoMinima = 45;
+int inclinacaoMaxima = 45;
+
+float coeficientePotencia = 0;
 
 #define MPU 0x68  //endere�o I2C do MPU6050
 #define CALIB 16071.82

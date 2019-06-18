@@ -1,3 +1,5 @@
+#include "configuration.h"
+
 void mpu_initialize(){
   Wire.begin();
   Wire.beginTransmission(MPU);
@@ -31,7 +33,7 @@ void read_mpu(){
   gy2 = gy1 * G_GAIN; 
   gz2 = gz1 * G_GAIN; 
 
-  gx= ((0.98 *((gx + gx2) *(dt/1000000))) + (0.02 * ax2));
-  gy= ((0.98 *((gy + gy2) *(dt/1000000))) + (0.02 * ay2));
-  gz= ((0.98 *((gz + gz2) *(dt/1000000))) + (0.02 * az2));
+  gx= ((0.98 *((gx + gx2) *(dt/1000000))) + (0.02 * ax2)) * 100;
+  gy= ((0.98 *((gy + gy2) *(dt/1000000))) + (0.02 * ay2)) * 100;
+  gz= ((0.98 *((gz + gz2) *(dt/1000000))) + (0.02 * az2)) * 100;
 }
