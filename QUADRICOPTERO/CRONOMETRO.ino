@@ -1,4 +1,4 @@
-#include "configuration.h"
+#include "CONFIGURACAO.h"
 
 void tempoCiclo(){
   t_total = micros();

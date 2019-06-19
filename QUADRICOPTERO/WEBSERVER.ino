@@ -1,4 +1,4 @@
-#include "configuration.h"
+#include "CONFIGURACAO.h"
 
 void serverInitialize(){
   server.on("/", HTTP_GET, [](AsyncWebServerRequest *request){

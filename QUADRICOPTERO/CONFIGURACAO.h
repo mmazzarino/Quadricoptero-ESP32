@@ -1,7 +1,9 @@
-#include<Wire.h>
+#include <Wire.h>
 #include <SPIFFS.h>
+#include <FS.h>
 #include <ESPAsyncWebServer.h>
 #include <WebSocketsServer.h>
+
 
 const char* ssid     = "embarcados";
 const char* password = "embarcados";
@@ -27,6 +29,15 @@ unsigned long t_total, t_anterior, dt = 0;
 
 int inclinacaoMinima = 45;
 int inclinacaoMaxima = 45;
+
+float ex, ey, ez;
+float cpx =, cpy =, cpz =;
+float cix =, ciy =, ciz =;
+float cdx, cdy, cdz;
+float px, py, pz = 0;
+float ix, iy, iz = 0;
+float dx, dy, dz = 0;
+float pidx, pidy, pidz = 0;
 
 float coeficientePotencia = 0;
 

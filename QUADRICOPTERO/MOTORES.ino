@@ -1,4 +1,4 @@
-#include "configuration.h"
+#include "CONFIGURACAO.h"
 
 void pinsMotorsInitialize(){
    pinMode(pma, OUTPUT);
@@ -10,6 +10,11 @@ void pinsMotorsInitialize(){
 void definePWM(){
 /*---------------------movimento para frente-----------------------*/
   if(sp_gx > gx){
+    erroX = sp_gx - gx;
+    px = ex * cpx;
+    ix = (cix * ex) * dt;
+    dx = (cdx * ex) / dt;
+    pidx = px + ix + dx;
     if((vma > vmc) and (vmd > vmb)){
       vma--;
       vmd--;

@@ -1,4 +1,4 @@
-#include "configuration.h"
+#include "CONFIGURACAO.h"
 
 void setPointsInclinacao(){ 
   sp_gx = map(x, -100, 100, inclinacaoMinima, inclinacaoMaxima); 
@@ -15,5 +15,5 @@ void setPointsGiroZ(){
 }
 
 void setPointsPotencia(){
-  coeficientePotencia = (float)k/100;  
+  potencia = map(k, -100, 100, 0, 255);  
 }

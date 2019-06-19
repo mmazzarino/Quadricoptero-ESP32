@@ -1,13 +1,16 @@
-#include "configuration.h"
+#include "CONFIGURACAO.h"
+#include "HTML_CSS_JS.h"
 
 void setup() {
-  Serial.begin(115200); 
+  Serial.begin(115200);
   spiffsInitialize();
+  //writeFile(SPIFFS, "/joy.html", joystick);
   wifiInitialize();
   startWebSocket();
   serverInitialize();
   mpuInitialize();
-  getDirecaoDecolagem(); 
+  read_mpu();
+  getDirecaoDecolagem();
   pinsMotorsInitialize();
 }
 
