@@ -1,5 +1,5 @@
 #include<Wire.h>
-#include "ArduinoJson-v5.13.5.h"
+//#include "ArduinoJson-v5.13.5.h"
   
 const int MPU=0x68;  //Endereco I2C do MPU6050
 const float CALIB = 16071.82;
@@ -68,14 +68,14 @@ void loop()
   GY4= ((0.98 *((GY4 + GY2) *(VARIACAO_TEMPO/1000000))) + (0.02 * AY3));
   GZ4= ((0.98 *((GZ4 + GZ2) *(VARIACAO_TEMPO/1000000))) + (0.02 * AZ3));
 
-/* Serial.print(" | AX = "); Serial.print(AX2);
+ Serial.print(" | AX = "); Serial.print(AX2);
  Serial.print(" | AY = "); Serial.print(AY2);
  Serial.print(" | AZ = "); Serial.print(AZ2);
  Serial.print(" | GX = "); Serial.print(GX4);
  Serial.print(" | GY = "); Serial.print(GY4);
  Serial.print(" | GZ = "); Serial.println(GZ4);
-*/
-DynamicJsonBuffer jBuffer;
+
+/*DynamicJsonBuffer jBuffer;
 JsonObject& root = jBuffer.createObject();
 root["ax"] = AX2;
 root["ay"] = AY2;
@@ -85,6 +85,6 @@ root["gy"] = GY4;
 root["gz"] = GZ4; 
 
 root.prettyPrintTo(Serial);
-Serial.println();
-delay(100);
+Serial.println();*/
+delay(300);
 }

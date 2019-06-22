@@ -15,5 +15,10 @@ void setPointsGiroZ(){
 }
 
 void setPointsPotencia(){
-  potencia = map(k, -100, 100, 0, 255);  
+  if(k != 0){
+    potencia = map(k, -100, 100, 0, 255);
+  }
+  else if(k = 0){
+     null; 
+  }
 }

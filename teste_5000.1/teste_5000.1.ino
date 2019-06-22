@@ -2,8 +2,8 @@
 #include <ESPAsyncWebServer.h>
 #include <WebSocketsServer.h>
  
-const char* ssid = "WAYSYSNET24G";
-const char* password = "a6f7010601";
+const char* ssid = "embarcados";
+const char* password = "embarcados";
  
 AsyncWebServer server(80);
 WebSocketsServer webSocket(81);

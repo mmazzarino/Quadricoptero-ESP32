@@ -39,7 +39,7 @@ float ix, iy, iz = 0;
 float dx, dy, dz = 0;
 float pidx, pidy, pidz = 0;
 
-float coeficientePotencia = 0;
+float potencia = 0;
 
 #define MPU 0x68  //endere�o I2C do MPU6050
 #define CALIB 16071.82
