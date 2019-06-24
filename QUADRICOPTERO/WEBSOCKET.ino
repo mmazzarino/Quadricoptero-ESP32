@@ -17,7 +17,7 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t lenght
         Serial.printf("[%u] Connected from %d.%d.%d.%d url: %s\n", num, ip[0], ip[1], ip[2], ip[3], payload);
       }
       break;
-    case WStype_TEXT:
+    case WStype_TEXT:{
       Serial.printf("[%u] get Text: %s", num, payload);
       x = atoi((const char *)&payload[3]);
       y = atoi((const char *)&payload[9]);

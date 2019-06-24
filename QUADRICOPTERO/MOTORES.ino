@@ -5,10 +5,73 @@ void pinsMotorsInitialize(){
    pinMode(pmb, OUTPUT);
    pinMode(pmc, OUTPUT);
    pinMode(pmd, OUTPUT);
+
+  ledcSetup(canalMa, freq, resolucao);
+  ledcSetup(canalMb, freq, resolucao);
+  ledcSetup(canalMc, freq, resolucao);
+  ledcSetup(canalMd, freq, resolucao);    
+
+  ledcAttachPin(pma, canalMa);
+  ledcAttachPin(pmb, canalMb);
+  ledcAttachPin(pmc, canalMc);
+  ledcAttachPin(pmd, canalMd);
 }
 
+
 void definePWM(){
-/*---------------------movimento para frente-----------------------*/
+   if(potencia != 0){
+    vma = potencia + pidx - pidy;
+    vmc = potencia + pidx + pidy;
+    vmb = potencia - pidx - pidy;
+    vmd = potencia - pidx + pidy;
+   
+    if(vma > 254){
+      vma = 255;
+     }
+    else if(vma < 100){
+      vma = 100;
+     }
+   
+    if(vmb > 254){
+      vmb = 255;
+    }
+    else if(vmb < 100){
+      vmb = 100;
+    }
+   
+    if(vmc > 254){
+      vmc = 255;
+    }
+    else if(vmc < 100){
+      vmc = 100;
+    }  
+   
+    if(vmd > 254){
+      vmd = 255;
+    }
+    else if(vmd < 100){
+      vmd = 100;
+    }
+  }
+  else if(potencia == 0){
+    vma = potencia;
+    vmb = potencia;
+    vmc = potencia;
+    vmd = potencia;
+  }
+   
+   ledcWrite(canalMa, vma);
+   ledcWrite(canalMb, vmb);
+   ledcWrite(canalMc, vmc);
+   ledcWrite(canalMd, vmd);
+}
+
+
+  
+ 
+  
+  /*
+//---------------------movimento para frente-----------------------
   if(sp_gx > gx){
     erroX = sp_gx - gx;
     px = ex * cpx;
@@ -25,7 +88,7 @@ void definePWM(){
     }
   }
   
-/*---------------------movimento para trás-------------------------*/
+//---------------------movimento para trás-------------------------
   if(sp_gx < gx){
     if((vmc > vma) and (vmb > vmd)){
       vmc--;
@@ -37,7 +100,7 @@ void definePWM(){
     }
   }
 
-/*---------------------movimento para esquerda---------------------*/
+//---------------------movimento para esquerda---------------------
   if(sp_gy > gy){
     if((vmd > vma) and (vmb > vmc)){
       vmd--;
@@ -48,7 +111,7 @@ void definePWM(){
       vmc++; 
   }
 
-/*---------------------movimento para direita----------------------*/
+//---------------------movimento para direita----------------------
   if(sp_gy < gy){
     if((vma > vmd) and (vmc > vmb)){
       vma--;
@@ -70,4 +133,4 @@ void definePWM(){
     
      
   }
-}
+}*/

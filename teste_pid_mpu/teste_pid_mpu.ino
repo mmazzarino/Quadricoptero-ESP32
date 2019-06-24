@@ -1,14 +1,16 @@
 #include "CONFIGURACAO.h"
 
-void mpu_initialize(){
+void setup() {
+  Serial.begin(115200);
   Wire.begin();
   Wire.beginTransmission(MPU);
   Wire.write(0x6B);
   Wire.write(0); 
   Wire.endTransmission(true);
+
 }
 
-void read_mpu(){  
+void loop() {
   Wire.beginTransmission(MPU);
   Wire.write(0x3B);  
   Wire.endTransmission(false);
@@ -36,8 +38,9 @@ void read_mpu(){
   gx= ((0.98 *((gx + gx2) * dt))) + (0.02 * ax2)) * 100;
   gy= ((0.98 *((gy + gy2) * dt)) + (0.02 * ay2)) * 100;
   gz= ((0.98 *((gz + gz2) * dt)) + (0.02 * az2)) * 100;
+
+
+  
 }
 
-void getDirecaoDecolagem(){
-  gz_ini = gz; 
 }

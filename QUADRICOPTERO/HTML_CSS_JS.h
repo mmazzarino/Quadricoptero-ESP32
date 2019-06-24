@@ -1,4 +1,3 @@
-const char joystick[] PROGMEM = R"=====(
 <!DOCTYPE HTML>
 <html>
   <head>

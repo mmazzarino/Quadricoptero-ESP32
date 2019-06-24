@@ -29,7 +29,7 @@ int inclinacaoMaxima = 30;
 
 float ex, ey, ez;
 float ex_ant, ey_ant, ez_ant;
-float kp = 0.65, ki = 0.003, kd = 0.4;
+float kp = 0.065, ki = 0.003, kd = 0.04;
 float px, py, pz = 0;
 float ix, iy, iz = 0;
 float dx, dy, dz = 0;
