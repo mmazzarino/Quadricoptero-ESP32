@@ -1,8 +1,10 @@
-#include<Wire.h>
-//#include "ArduinoJson-v5.13.5.h"
-  
-const int MPU=0x68;  //Endereco I2C do MPU6050
+#include <Wire.h>
+const int MPU = 0x68;  //Endereco I2C do MPU6050
+const int teste = 0x6B;
+const int teste2 = 0x3B; 
+uint8_t catorze = 14;
 const float CALIB = 16071.82;
+const float AJUSTE = 1.69;
 const float GRAVI = 9.81;
 const float G_GAIN = 0.00875; 
 unsigned long T_TOTAL = 0;          //variáveis para calcular o tempo decorrido de cada medição do MPU 
@@ -19,14 +21,14 @@ void setup()
 
  
   Wire.begin();
-  delay(1000);
   Wire.beginTransmission(MPU);
- delay(1000);
+
   Wire.write(0x6B); 
-   delay(1000);
+ delay(3000);
   //Inicializa o MPU-6050
   Wire.write(0); 
   Wire.endTransmission(true);
+    delay(8000);
 }
 void loop()
 {
@@ -48,25 +50,27 @@ void loop()
   GY1=Wire.read()<<8|Wire.read();  //0x45 (GYRO_YOUT_H) & 0x46 (GYRO_YOUT_L)
   GZ1=Wire.read()<<8|Wire.read();  //0x47 (GYRO_ZOUT_H) & 0x48 (GYRO_ZOUT_L)
 
-  AX2 = ((AX1*GRAVI)/CALIB);
-  AY2 = ((AY1*GRAVI)/CALIB);
-  AZ2 = ((AZ1*GRAVI)/CALIB);
 
-  AX3 = (atan2(AX1, sqrt(pow(AY1,2) + pow(AZ1,2)))*180) / 3.14; 
-  AY3 = (atan2(AY1, sqrt(pow(AX1,2) + pow(AZ1,2)))*180) / 3.14; 
-  AZ3 = (atan2(AZ1, sqrt(pow(AX1,2) + pow(AY1,2)))*180) / 3.14; 
+AX2 = ((AX1*GRAVI)/CALIB);
+AY2 = ((AY1*GRAVI)/CALIB);
+AZ2 = ((AZ1*(GRAVI-AJUSTE))/CALIB);
 
-  GX2 = GX1 * G_GAIN; 
-  GY2 = GY1 * G_GAIN; 
-  GZ2 = GZ1 * G_GAIN; 
+  AX3 = (atan2(AX1, sqrt(pow(AY1,2) + pow(AZ1,2))))* (180 / 3.14); 
+  AY3 = (atan2(AY1, sqrt(pow(AX1,2) + pow(AZ1,2))))* (180 / 3.14); 
+  AZ3 = (atan2(AZ1, sqrt(pow(AX1,2) + pow(AY1,2))))* (180 / 3.14); 
 
-  GX3 = GX3 + (GX2 * VARIACAO_TEMPO);
-  GY3 = GY3 + (GY2 * VARIACAO_TEMPO);
-  GZ3 = GZ3 + (GZ2 * VARIACAO_TEMPO);
 
-  GX4= ((0.98 *((GX4 + GX2) *(VARIACAO_TEMPO/1000000))) + (0.02 * AX3));
-  GY4= ((0.98 *((GY4 + GY2) *(VARIACAO_TEMPO/1000000))) + (0.02 * AY3));
-  GZ4= ((0.98 *((GZ4 + GZ2) *(VARIACAO_TEMPO/1000000))) + (0.02 * AZ3));
+GX2 = GX1 * G_GAIN;
+GY2 = GY1 * G_GAIN;
+GZ2 = GZ1 * G_GAIN;
+
+  GX3 = GX3 + (GX2 * (VARIACAO_TEMPO/1000000));
+  GY3 = GY3 + (GY2 * (VARIACAO_TEMPO/1000000));
+  GZ3 = GZ3 + (GZ2 * (VARIACAO_TEMPO/1000000));
+
+  GX4= ((0.98 *((GX4 + GX2) *(VARIACAO_TEMPO/1000000))) + (0.02 * AX3))*50;
+  GY4= ((0.98 *((GY4 + GY2) *(VARIACAO_TEMPO/1000000))) + (0.02 * AY3))*50;
+  GZ4= ((0.98 *((GZ4 + GZ2) *(VARIACAO_TEMPO/1000000))) + (0.02 * AZ3))*50;
 
  Serial.print(" | AX = "); Serial.print(AX2);
  Serial.print(" | AY = "); Serial.print(AY2);

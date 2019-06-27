@@ -1,6 +1,7 @@
-//------------------Rede------------------
-const char* ssid     = "embarcados";                  
-const char* password = "embarcados";
+//--------Porta do webServer-----------------
+
+
+//--------Porta do webSocket-----------------
 
 //------------------Motores------------------                        
 const int pma = 14;                     
@@ -97,10 +98,13 @@ float pidz = 0;
 
 //------------------I2C------------------
 
-#define MPU 0x68
-#define CALIB 16071.82
-#define GRAVI 9.81
-#define G_GAIN 0.00875
+const int MPU = 0x68;
+const float CALIB = 16071.82;
+const float GRAVI = 9.81;
+const float AJUSTE = 1.69;
+const float G_GAIN = 0.00875;
+
+
 
 
 

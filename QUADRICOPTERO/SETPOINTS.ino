@@ -1,4 +1,4 @@
-#include "BIBLIOTECAS.h"
+//#include "BIBLIOTECAS.h"
 #include "DEFINICOES.h"
 
 void setPointsInclinacao(){ 

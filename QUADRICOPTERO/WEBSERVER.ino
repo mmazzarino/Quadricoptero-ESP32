@@ -1,7 +1,8 @@
-#include "BIBLIOTECAS.h"
+//#include "BIBLIOTECAS.h"
 #include "DEFINICOES.h"
 
-void serverInitialize(){
+
+void serverInitialize(){ 
   server.on("/", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(SPIFFS, "/joy.html", "text/html");
   });

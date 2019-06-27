@@ -1,7 +1,8 @@
-#include "BIBLIOTECAS.h"
+//#include "BIBLIOTECAS.h"
 #include "DEFINICOES.h"
 
-void startWebSocket() {
+
+void startWebSocket() {  
   webSocket.begin();
   webSocket.onEvent(webSocketEvent);
   Serial.println("WebSocket server started.");

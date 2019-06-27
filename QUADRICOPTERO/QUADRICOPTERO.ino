@@ -1,7 +1,8 @@
 #include "BIBLIOTECAS.h"
 #include "DEFINICOES.h"
 #include "HTML_CSS_JS.h"
-
+AsyncWebServer server(80);
+WebSocketsServer webSocket(81);
 void setup() {
   Serial.begin(115200);
   spiffsInitialize();
