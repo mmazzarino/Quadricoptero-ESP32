@@ -1,3 +1,4 @@
+const char joyHtml[] PROGMEM = R"=====(
 <!DOCTYPE HTML>
 <html>
   <head>

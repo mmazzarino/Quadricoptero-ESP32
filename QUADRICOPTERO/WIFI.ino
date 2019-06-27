@@ -1,4 +1,5 @@
-#include "CONFIGURACAO.h"
+#include "BIBLIOTECAS.h"
+#include "DEFINICOES.h"
 
 void wifiInitialize(){
   WiFi.begin(ssid, password);

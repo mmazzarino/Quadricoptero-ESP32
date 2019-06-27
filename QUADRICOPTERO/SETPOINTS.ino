@@ -1,4 +1,5 @@
-#include "CONFIGURACAO.h"
+#include "BIBLIOTECAS.h"
+#include "DEFINICOES.h"
 
 void setPointsInclinacao(){ 
   sp_gx = map(x, -100, 100, inclinacaoMinima, inclinacaoMaxima); 

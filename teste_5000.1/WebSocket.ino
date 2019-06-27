@@ -1,4 +1,4 @@
-#include "configuration.h"
+//#include "configuration.h"
 void startWebSocket() { // Start a WebSocket server
   webSocket.begin();                          // start the websocket server
   webSocket.onEvent(webSocketEvent);          // if there's an incomming websocket message, go to function 'webSocketEvent'

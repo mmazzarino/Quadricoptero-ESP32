@@ -1,4 +1,5 @@
-#include "CONFIGURACAO.h"
+#include "BIBLIOTECAS.h"
+#include "DEFINICOES.h"
 #include "HTML_CSS_JS.h"
 
 void setup() {
@@ -8,7 +9,7 @@ void setup() {
   wifiInitialize();
   startWebSocket();
   serverInitialize();
-  mpuInitialize();
+  mpu_initialize();
   read_mpu();
   getDirecaoDecolagem();
   pinsMotorsInitialize();

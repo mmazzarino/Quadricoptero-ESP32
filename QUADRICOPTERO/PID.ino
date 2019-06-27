@@ -1,3 +1,6 @@
+#include "BIBLIOTECAS.h"
+#include "DEFINICOES.h"
+
 void pidEixoX(){
   ex = gx - sp_gx;
   px = kp * ex;
