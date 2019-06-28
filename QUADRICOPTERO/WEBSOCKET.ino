@@ -1,7 +1,3 @@
-//#include "BIBLIOTECAS.h"
-#include "DEFINICOES.h"
-
-
 void startWebSocket() {  
   webSocket.begin();
   webSocket.onEvent(webSocketEvent);

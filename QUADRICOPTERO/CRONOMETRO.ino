@@ -1,6 +1,3 @@
-//#include "BIBLIOTECAS.h"
-#include "DEFINICOES.h"
-
 void tempoCiclo(){
   t_total = micros();
   dt = (t_total - t_anterior)/1000000;

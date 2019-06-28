@@ -1,16 +1,13 @@
-//#include "BIBLIOTECAS.h"
-#include "DEFINICOES.h"
-
 void pinsMotorsInitialize(){
    pinMode(pma, OUTPUT);
    pinMode(pmb, OUTPUT);
    pinMode(pmc, OUTPUT);
    pinMode(pmd, OUTPUT);
 
-  ledcSetup(canalMa, freq, resolucao);
-  ledcSetup(canalMb, freq, resolucao);
-  ledcSetup(canalMc, freq, resolucao);
-  ledcSetup(canalMd, freq, resolucao);    
+  ledcSetup(canalMa, frequencia, resolucao);
+  ledcSetup(canalMb, frequencia, resolucao);
+  ledcSetup(canalMc, frequencia, resolucao);
+  ledcSetup(canalMd, frequencia, resolucao);    
 
   ledcAttachPin(pma, canalMa);
   ledcAttachPin(pmb, canalMb);
