@@ -18,10 +18,20 @@ void pinsMotorsInitialize(){
 
 void definePWM(){
    if(potencia != 0){
-    vma = potencia + pidx - pidy;
-    vmc = potencia + pidx + pidy;
-    vmb = potencia - pidx - pidy;
-    vmd = potencia - pidx + pidy;
+    if(pidx != pidxAnt){
+      vma = potencia + pidx;
+      vmc = potencia + pidx;
+      vmb = potencia - pidx;
+      vmd = potencia - pidx;
+      pidxAnt = pidx;
+    }
+    if(pidy != pidyAnt){
+      vma = potencia - pidy;
+      vmc = potencia + pidy;
+      vmb = potencia - pidy;
+      vmd = potencia + pidy;
+      pidyAnt = pidy;
+    }
    
     if(vma > 254){
       vma = 255;

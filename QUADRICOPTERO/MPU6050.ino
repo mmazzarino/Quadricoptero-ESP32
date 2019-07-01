@@ -42,7 +42,3 @@ void read_mpu(){
   gy= ((0.98 *((gy + gy2) * dt)) + (0.02 * ay3))*50;
   gz= ((0.98 *((gz + gz2) *dt)) + (0.02 * az3))*50;
 }
-
-void getDirecaoDecolagem(){
-  gz_ini = gz; 
-}

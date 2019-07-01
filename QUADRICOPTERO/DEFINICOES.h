@@ -4,8 +4,10 @@ AsyncWebServer server(80);
 //--------Porta do webSocket-----------------
 WebSocketsServer webSocket(81);
 
+//--------Dados da rede----------------------
 const char *ssid = "embarcados";                  
 const char *password = "embarcados";
+
 //------------------Motores------------------                        
 volatile int pma = 14;                     
 volatile int pmb = 13;                     
@@ -102,7 +104,9 @@ volatile float dy = 0;
 volatile float dz = 0;
 volatile float pidx = 0;
 volatile float pidy = 0;
-volatile float pidz = 0;
+volatile float pidxAnt = 0;
+volatile float pidyAnt = 0;
+
 
 //------------------I2C------------------
 

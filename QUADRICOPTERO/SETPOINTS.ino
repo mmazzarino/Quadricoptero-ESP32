@@ -3,13 +3,6 @@ void setPointsInclinacao(){
   sp_gy = map(y, -100, 100, inclinacaoMinima, inclinacaoMaxima);  
 }
 
-void setPointsGiroZ(){
-  if((sp_gx == 0) and (sp_gy == 0)){
-    sp_gz = map(j, -100, 100, -180, 180) + gz_ini;          
-  } 
-
-}
-
 void setPointsPotencia(){
   if((k != 0) and (k > -20)){
     potencia = map(k, -100, 100, 0, 255);

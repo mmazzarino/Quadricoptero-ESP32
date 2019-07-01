@@ -10,8 +10,6 @@ void setup() {
   startWebSocket();
   serverInitialize();
   mpu_initialize();
-  read_mpu();
-  getDirecaoDecolagem();
   pinsMotorsInitialize();
 }
 
@@ -20,12 +18,10 @@ void loop() {
   webSocket.loop();
   setPointsPotencia(); 
   setPointsInclinacao();
-  setPointsGiroZ();
   read_mpu();
   pidEixoX(); 
   pidEixoY();
   definePWM();
-
 }
 
   

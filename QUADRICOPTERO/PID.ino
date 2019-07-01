@@ -3,7 +3,7 @@ void pidEixoX(){
   px = kp * ex;
   ix += ki * ex;
   dx = (kd * ex)/dt;
-  pidx = px + ix + dx;                            //testar também sem a ação derivativa
+  pidx = px + ix + dx;
   ex_ant = ex;
 }
 
@@ -12,6 +12,6 @@ void pidEixoY(){
   py = kp * ey;
   iy += ki * ey;
   dy = (kd * ey)/dt;
-  pidy = py + iy + dy;                            //testar também sem a ação derivativa
+  pidy = py + iy + dy;
   ey_ant = ey;
 }
