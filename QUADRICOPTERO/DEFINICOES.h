@@ -5,8 +5,8 @@ AsyncWebServer server(80);
 WebSocketsServer webSocket(81);
 
 //--------Dados da rede----------------------
-const char *ssid = "embarcados";                  
-const char *password = "embarcados";
+const char *ssid = "ssid da rede";                  
+const char *password = "senha da rede";
 
 //------------------Motores------------------                        
 volatile int pma = 14;                     
