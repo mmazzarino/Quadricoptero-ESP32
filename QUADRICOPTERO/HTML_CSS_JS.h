@@ -1,4 +1,3 @@
-const char joyHtml[] PROGMEM = R"=====(
 <!DOCTYPE HTML>
 <html>
   <head>
@@ -7,6 +6,7 @@ const char joyHtml[] PROGMEM = R"=====(
     <style type="text/css">
         body{
           border: 5px solid #1C1C1C;}
+
 
         #titulo{
           text-align: center;}
@@ -18,45 +18,47 @@ const char joyHtml[] PROGMEM = R"=====(
     
         #joy2{
           margin-left: 65%;}  
-
-        #joystick{
-          border: 5px solid #1C1C1C;}
+		  
+	
+        
     </style>
 
     <script> 
-        var JoyStick = (function(container, parameters){
-            parameters = parameters || {};
-            var title = (undefined === parameters.title ? 'joystick' : parameters.title),
-            width = (undefined === parameters.width ? 0 : parameters.width),
-            height = (undefined === parameters.height ? 0 : parameters.height),
-            internalFillColor = (undefined === parameters.internalFillColor ? '#CD2626' : parameters.internalFillColor),
-            internalLineWidth = (undefined === parameters.internalLineWidth ? 2 : parameters.internalLineWidth),
-            internalStrokeColor = (undefined === parameters.internalStrokeColor ? '#363636' : parameters.internalStrokeColor),
-            externalLineWidth = (undefined === parameters.externalLineWidth ? 2 : parameters.externalLineWidth),
-            externalStrokeColor = (undefined === parameters.externalStrokeColor ? '#008000' : parameters.externalStrokeColor);
-            var objContainer = document.getElementById(container);
-            var canvas = document.createElement('canvas');
-            canvas.id = title;
-            if(width == 0) width = objContainer.clientWidth;
-            if(height == 0) height = objContainer.clientHeight;
-            canvas.width = width;
-            canvas.height = height;
-            objContainer.appendChild(canvas);
-            var context=canvas.getContext('2d');
-            var pressed = 0; // Bool - 1=Yes - 0=No
+        var JoyStick = (function(container){
+			
+			internalFillColor = '#CD2626';
+            internalLineWidth = 2;
+            internalStrokeColor = '#363636';
+            externalLineWidth = 2;
+            externalStrokeColor = '#008000';			
+			
+			objContainer = document.getElementById(container);
+			
+			var canvas = document.createElement('canvas');
+			canvas.id = objContainer.clientTitle;
+			canvas.width = objContainer.clientWidth;
+            canvas.height = objContainer.clientHeight;
+			canvas.border = objContainer.clientBorder;
+						
+			objContainer.appendChild(canvas);
+			var context=canvas.getContext('2d');
+			
+			var pressed = 0;        
+			
             var circumference = 2 * Math.PI;
-            var internalRadius = (canvas.width-((50*2)+10))/2;
-            var maxMoveStick = internalRadius + 5;
-            var externalRadius = internalRadius + 30;
-            var centerX = canvas.width / 2;
-            var centerY = canvas.height / 2;
-            var directionHorizontalLimitPos = canvas.width / 10;
-            var directionHorizontalLimitNeg = directionHorizontalLimitPos * -1;
-            var directionVerticalLimitPos = canvas.height / 10;
-            var directionVerticalLimitNeg = directionVerticalLimitPos * -1;
-            var movedX=centerX;
-            var movedY=centerY;
-            var touchable = 'createTouch' in document;
+            var internalRadius = (canvas.width-((50*2)+10))/2; //45
+            var maxMoveStick = internalRadius + 5; //50
+            var externalRadius = internalRadius + 30; //75
+            var centerX = canvas.width / 2; //100
+            var centerY = canvas.height / 2; //100
+            var directionHorizontalLimitPos = canvas.width / 10; //20
+            var directionHorizontalLimitNeg = directionHorizontalLimitPos * -1; //-20
+            var directionVerticalLimitPos = canvas.height / 10; //20
+            var directionVerticalLimitNeg = directionVerticalLimitPos * -1; //-20
+            var movedX=centerX; //100
+            var movedY=centerY; //100
+            
+			var touchable = 'createTouch' in document;
             if(touchable){
                 canvas.addEventListener('touchstart', onTouchStart, false);
                 canvas.addEventListener('touchmove', onTouchMove, false);
@@ -67,7 +69,9 @@ const char joyHtml[] PROGMEM = R"=====(
                 canvas.addEventListener('mousemove', onMouseMove, false);
                 canvas.addEventListener('mouseup', onMouseUp, false);
                 }
+				
             drawExternal();
+			
             drawInternal(centerX, centerY);
             
             function drawExternal(){
@@ -200,8 +204,10 @@ const char joyHtml[] PROGMEM = R"=====(
   </head>
   <body>
       <h1 id="titulo">Joystick Virtual</h1>
-      <div id ="joy1">
-          <div id="joyDiv" style="width:200px;height:200px;margin-bottom:20px;"></div>  
+      
+	  
+	  <div id ="joy1">
+          <div id="joyDiv" title="joystick1" style="width:200px;height:200px;margin-bottom:20px;border: 5px solid #1C1C1C;"></div>  
           Posizione X:<input id="posizioneX" type="text" /></br>
           Posizione Y:<input id="posizioneY" type="text" /></br>
           Direzione:<input id="direzione" type="text" /></br>
@@ -210,7 +216,7 @@ const char joyHtml[] PROGMEM = R"=====(
       </div>
 
       <div id="joy2">
-          <div id="joyDiv2" style="width:200px;height:200px;margin-bottom:20px;"></div> 
+          <div id="joyDiv2" title="joystick2" style="width:200px;height:200px;margin-bottom:20px;border: 5px solid #1C1C1C;"></div> 
           Posizione J:<input id="posizioneJ" type="text" /></br>
           Posizione K:<input id="posizioneK" type="text" /></br>
           Direzione2:<input id="direzione2" type="text" /></br>
@@ -246,8 +252,7 @@ const char joyHtml[] PROGMEM = R"=====(
           setInterval(function(){ inputPosK.value=joy2.GetPosY(); }, 50);
           setInterval(function(){ direzione2.value=joy2.GetDir(); }, 50);
           setInterval(function(){ j.value=joy2.GetX(); }, 50);
-          setInterval(function(){
-              k.value=joy2.GetY();       
+          setInterval(function(){ k.value=joy2.GetY();       
               sendCoordenadas();
               }, 50);
 
@@ -284,4 +289,3 @@ const char joyHtml[] PROGMEM = R"=====(
     </script>
   </body>
 </html> 
-)=====";
