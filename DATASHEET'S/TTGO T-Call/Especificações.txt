@@ -1,0 +1,43 @@
+Especificações de hardware
+CHIPSET	ESPRESSIF-ESP32 microprocessador LX6 de 32 bits Xtensa® de núcleo único / duplo de 32 bits
+INSTANTÂNEO	QSPI flash de 4 MB / PSRAM 8 MB
+SRAM	520 kB SRAM
+BOTÃO	Restabelecer
+USB PARA TTL	CP2104
+INTERFACE MODULAR	UART, SPI, SDIO, I2C, LED PWM, TV PWM, I2S, IRGPIO, sensor de toque do capacitor, ADC, pré-amplificador DACLNA
+RELÓGIO DE BORDO	Oscilador de cristal de 40MHz 
+TENSÃO DE TRABALHO	2.7V-3.6V
+CORRENTE DE TRABALHO	Cerca de 70mA
+CORRENTE DO SONO	Cerca de 300uA
+CARTÃO SIM	Cartão Nano SIM
+TEMPERATURA DE TRABALHO	-40 ℃ ~ + 85 ℃
+TAMANHO E PESO	78,83 mm * 28,92 mm * 8,06 mm (11,77 g)
+Especificações da fonte de alimentação
+FONTE DE ALIMENTAÇÃO USB	5V / 1A
+CORRENTE DE CARREGAMENTO	500mA
+BATERIA	Bateria de lítio 3.7V
+CONECTOR JST	2Pin 1.25mm
+USB 	Tipo C
+
+
+ 
+
+Wi-fi
+PADRÃO	FCC / CE-RED / IC / TELEC / KCC / SRRC / NCC
+PROTOCOLO	802.11 b / g / n (802.11n ， acelera até 150Mbps) polimerização A-MPDU e A-MSDU ， suportam 0.4μS Intervalo de proteção
+ALCANCE DE FREQUÊNCIA	2.4GHz ~ 2.5GHz (2400M ~ 2483.5M)
+POTÊNCIA DE TRANSMISSÃO	22dBm
+DISTÂNCIA DE COMUNICAÇÃO 	300m
+Bluetooth
+PROTOCOLO	Bluetooth v4.2BR / EDR e padrão BLE
+FREQUÊNCIA DE RÁDIO	com receptor NZIF de sensibilidade de -97dBm AFH de classe 1, classe 2 e classe 3
+FREQÜÊNCIA DE ÁUDIO	Frequência de áudio CVSD e SBC
+ 
+Especificação de software
+MODO WI-FI	Estação / SoftAP / SoftAP + Estação / P2P
+MECANISMO DE SEGURANÇA	WPA / WPA2 / WPA2-Empresa / WPS
+ATUALIZAÇÃO DE FIRMWARE	Download UART / OTA (através da rede / host para baixar e gravar firmware)
+DESENVOLVIMENTO DE SOFTWARE	Suporte ao desenvolvimento do servidor de nuvem / SDK para desenvolvimento de firmware do usuário
+PROTOCOLO DE REDE	IPv4, IPv6, SSL, TCP / UDP / HTTP / FTP / MQTT
+CONFIGURAÇÃO DO USUÁRIO	Conjunto de instruções AT +, servidor em nuvem, aplicativo android / ios
+OS	FreeRTOS

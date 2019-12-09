@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+/*PROGMEM = T"=====(<!DOCTYPE HTML>
 <html>
   <head>
     <title>Joy</title>
@@ -6,7 +6,6 @@
     <style type="text/css">
         body{
           border: 5px solid #1C1C1C;}
-
 
         #titulo{
           text-align: center;}
@@ -289,3 +288,4 @@
     </script>
   </body>
 </html> 
+)=====";*/

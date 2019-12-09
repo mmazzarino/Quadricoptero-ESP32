@@ -1,0 +1,54 @@
+ESP32
+  ESP32 Version REV1
+  WiFi
+  Bluetooth 
+  4MB Flash
+  3D Antenna
+ 
+LORA
+  Working voltage:      1.8 ~ 3.7v
+  Acceptable current:   10 ~ 14mA
+  Transmit current:     120mA @ +20dBm
+                         90mA @ +17dBm
+                         29mA @ +13dBm
+  Operating frequency:  433MHz / 868MHz / 915MHz
+  Transmit power:       +20dBm
+  Receive sensitivity:  -139dBm @ LoRa &  62.5 KHz & SF=12 &  146bps
+                        -136dBm @ LoRa & 125 KHz   & SF=12 &  293bps
+                        -118dBm @ LoRa & 125 KHz   & SF=6  & 9380bps
+                        -123dBm @ FSK  &   5 KHz   & 1.2Kbps
+  Frequency error:       +/-15KHz
+  FIFO space:            64 byte
+  Data rate:             1.2K ~ 300Kbps @ FSK
+                         0.018K ~ 37.5Kbps @ LoRa        
+  Modulation Mode:       FSK, GFSK, MSK, GMSK, LoRa TM, OOK
+  Interface form:        SPI
+  Sleep current:         0.2uA @ SLEEP
+                         1.5uA @ IDLE
+  Operating temperature: -40℃ - +85℃
+  Digital RSSI function
+  Automatic frequency correction
+  Automatic gain control 
+  RF wake-up function
+  Low voltage detection and temperature sensor
+  Fast wake-up and frequency hopping
+  Highly configurable data packet handler
+
+GPS
+  GPS modules NEO-6M, 3V-5V power supply Universal
+  Destined module with ceramic antenna, signal super
+  Save the configuration parameter data EEPROM Down
+  With data backup battery
+  There are LED signal indicator
+  Default Baud Rate: 9600
+
+Power
+  IP5306 2A Battery PMIC
+  LED, Blue - User controller
+  LED, Red - GPS 1PPS
+  LED, Red/green - battery charged/power on
+  Button, reset switch
+  Button, user readable
+  Switch, power on/battery charge
+  USB
+  CP2104-GMR
