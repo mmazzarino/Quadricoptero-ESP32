@@ -1,0 +1,4 @@
+Regulador Tensão DC/DC (Step Down)  
+Cintas plásticas
+Protoboard (talvez)
+Cabos macho/fêmea (talvez)

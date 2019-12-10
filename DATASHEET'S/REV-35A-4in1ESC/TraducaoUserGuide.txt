@@ -1,0 +1,16 @@
+O IN1 corresponde ao motor 1, IN2 corresponde ao motor 2, IN3 corresponde ao motor 3, IN4 corresponde ao motor 4. Eles não são definições para o
+número do motor do quadcopter no configurador CLEANFLIGHT ou BETAFLIGHT, ajuste os fios do sinal ESC de acordo com o MAP MIXER.
+CENR é sensor de corrente, VBAT é saída direta da bateria.
+
+SOFTWARE ABD BETAFLIGHT PASS-ATRAVÉS:
+
+1. Faça o download da nova versão BLHELISUITE
+2. Conecte o Rev35A 4in1 ESC ao controlador de vôo executado BETAFLIGHT ou CLEANFLIGHT
+3. Conecte o controlador de vôo ao computador e ligue o Rev35A 4in1 ESC
+4. Abra o Gerenciador de dispositivos do seu computador e encontre as portas, verifique se o número de série da porta COM é 255, caso contrário ele não poderá se conectar ao BLHELISUITE. Você pode alterar o número de série da porta como na etapa:
+
+
+
+5. Abra o BLHELISUITE, selecione SILABS BLHeli Bootloader (Cleanflight) na terceira guia na parte superior.
+Em seguida, selecione a porta serial direita e clique em conectar. Você também pode atualizar o novo release BLHeli_s fimware via
+o BLHELISUITE, alvo J-H-XX.
