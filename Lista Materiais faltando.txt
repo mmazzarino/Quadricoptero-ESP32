@@ -2,3 +2,6 @@ Regulador Tensão DC/DC (Step Down)
 Cintas plásticas
 Protoboard (talvez)
 Cabos macho/fêmea (talvez)
+Bateria para o T-beam (encontrar carregador de celular portatil)
+Multimetro
+Carregador Lipo
