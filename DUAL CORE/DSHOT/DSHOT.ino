@@ -29,7 +29,7 @@ int contClockBit = 0;
 
 void setup() {
 
-  setCpuFrequencyMhz(200);  /* pesquisa rapida sobre como setar a frequência corretamente p/ 200MHz*/ 
+  setCpuFrequencyMhz(240);  /* pesquisa rapida sobre como setar a frequência corretamente p/ 200MHz*/ 
   Serial.begin(115200); 
   pinMode(escA, OUTPUT);
   pinMode(escB, OUTPUT);
@@ -56,7 +56,7 @@ void Task1code( void * pvParameters ){
   for(;;){   
     
     for(contBit = 15; contBit >= 0; ){       
-      while(contClockBit <= 334){
+      while(contClockBit <= 401){
         switch(contClockBit){       
           case 0: escA = HIGH; 
                   escB = HIGH; 
@@ -64,19 +64,19 @@ void Task1code( void * pvParameters ){
                   escD = HIGH;
                   break; 
                   
-          case 125: if(bitRead(escA, contBit) == '0'){ escA = LOW;}
+          case 150: if(bitRead(escA, contBit) == '0'){ escA = LOW;}
                     if(bitRead(escB, contBit) == '0'){ escB = LOW;}
                     if(bitRead(escC, contBit) == '0'){ escC = LOW;}
                     if(bitRead(escD, contBit) == '0'){ escD = LOW;}
                     break;
           
-          case 250: if(bitRead(escA, contBit) == '1'){ escA = LOW;}
+          case 300: if(bitRead(escA, contBit) == '1'){ escA = LOW;}
                     if(bitRead(escB, contBit) == '1'){ escB = LOW;}
                     if(bitRead(escC, contBit) == '1'){ escC = LOW;}
                     if(bitRead(escD, contBit) == '1'){ escD = LOW;}
                     break;
           
-          case 334: if(contBit > 0){ zeraContClockBit = true;
+          case 401: if(contBit > 0){ zeraContClockBit = true;
                                      contBit--;  
                                      break;
                                     }
@@ -89,7 +89,7 @@ void Task1code( void * pvParameters ){
       contBit--;
     }
 
-    if(contClockBit == 400){
+    if(contClockBit == 881){
        zeraContClockBit = true;
       } 
     }
