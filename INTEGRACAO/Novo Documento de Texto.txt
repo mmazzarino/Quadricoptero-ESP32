@@ -1,0 +1,32 @@
+Flluxograma de funcionamento
+
+-determinação manual de 4 coordenadas
+
+-determinação manual da faixa de cobertura que o veiculo terá em cada volta (distância entre as linhas de ida e vinda) e altitude do voo
+
+-processo automático de determinação das coordenadas ponto de referência que serão o local de destino de cada reta que o veiculo realizar
+
+-armazenamento das coordenadas ponto de referência em uma matriz, na ordem em que o trajeto deve ser desenvolvido 
+
+ --  inicio do loop
+ 
+-verificação das coordenadas atuais  
+
+
+-calculo da direção que deve ser tomada para chegar ao próximo destino
+
+--inicio do voo, ganho de altitude
+
+-direcionamento e inicio do movimento
+
+-comparação entre a coordenada atual e o destino
+
+-verifica se já chegou no destino
+
+--ao chegar no ponto especificado para o movimento
+
+-calculo da direção que deve ser tomada para chegar ao próximo destino
+
+-direcionamento e inicio do movimento
+
+..............
