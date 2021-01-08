@@ -16,12 +16,12 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t lenght
       }
       break;
     case WStype_TEXT:{
-      Serial.printf("[%u] get Text: %s", num, payload);
+      //Serial.printf("[%u] get Text: %s", num, payload);
       x = atoi((const char *)&payload[3]);
       y = atoi((const char *)&payload[9]);
       j = atoi((const char *)&payload[15]);
       k = atoi((const char *)&payload[21]);
-      Serial.printf("         %d, %d, %d, %d \n", x, y, j, k);
+     // Serial.printf("         %d, %d, %d, %d \n", x, y, j, k);
     }
       break;
   }

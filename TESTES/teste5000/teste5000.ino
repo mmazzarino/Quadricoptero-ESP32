@@ -157,35 +157,40 @@ void setup(){
         return;
     }
 
- 
+
+    /*writeFile(SPIFFS, "/joystick-master_index.html", MainHtml);
+    writeFile(SPIFFS, "/js/backbone-min.js", backBoneJS);
+    writeFile(SPIFFS, "/js/joystick_view.js", joystickJS);
+    writeFile(SPIFFS, "/js/jquery-1.11.2.min.js", jqueryJS);
+    writeFile(SPIFFS, "/js/jquery.js", jqueryJS);
+    writeFile(SPIFFS, "/js/underscore-min.js", underscoreJS);
+    writeFile(SPIFFS, "/img/button.png", butonPNG);
+    writeFile(SPIFFS, "/img/canvas.png", canvas.png);
+    */
+   
+    /*
+    writeFile(SPIFFS, "/joy.js", joyJs);
+    writeFile(SPIFFS, "/joy.min.js", joyMinJs);
+   
+    readFile(SPIFFS, "/joy.html");
+    Serial.println("/n/n-------------------------------------------------/n/n");
+
+    readFile(SPIFFS, "/joy.js");
+    Serial.println("/n/n-------------------------------------------------/n/n");
+
+    readFile(SPIFFS, "/joy.min.js");
+    Serial.println("/n/n-------------------------------------------------/n/n");
     
-   // writeFile(SPIFFS, "/joystick-master_index.html", MainHtml);
-  //  writeFile(SPIFFS, "/js/backbone-min.js", backBoneJS);
-   // writeFile(SPIFFS, "/js/joystick_view.js", joystickJS);
-   // writeFile(SPIFFS, "/js/jquery-1.11.2.min.js", jqueryJS);
-    //  writeFile(SPIFFS, "/js/jquery.js", jqueryJS);
-   // writeFile(SPIFFS, "/js/underscore-min.js", underscoreJS);
-   // writeFile(SPIFFS, "/img/button.png", butonPNG);
-    //writeFile(SPIFFS, "/img/canvas.png", canvas.png);
-   // 
-   
-  writeFile(SPIFFS, "/joy.html", joyHtml);
- //writeFile(SPIFFS, "/joy.js", joyJs);
- // writeFile(SPIFFS, "/joy.min.js", joyMinJs);
-   
-   // readFile(SPIFFS, "/joy.html");
-  //  Serial.println("/n/n-------------------------------------------------/n/n");
+    renameFile(SPIFFS, "/hello.txt", "/foo.txt");
+    
+    testFileIO(SPIFFS, "/test.txt");
+    deleteFile(SPIFFS, "joy.html");
+    
 
-      //readFile(SPIFFS, "/joy.js");
- //   Serial.println("/n/n-------------------------------------------------/n/n");
-
-      //readFile(SPIFFS, "/joy.min.js");
-    //Serial.println("/n/n-------------------------------------------------/n/n");
-    //deleteFile(SPIFFS, "/js/jquery.js");
-   // renameFile(SPIFFS, "/hello.txt", "/foo.txt");
-  //  readFile(SPIFFS, "/foo.txt");
-  //  testFileIO(SPIFFS, "/test.txt");
-  listDir(SPIFFS, "/", 0);
+   
+    //listDir(SPIFFS, "/", 0);*/
+    readFile(SPIFFS, "/joy.html");
+    // writeFile(SPIFFS, "/joy.html", joyHtml);
 }
  
 void loop(){

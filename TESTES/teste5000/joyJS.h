@@ -33,18 +33,12 @@ var directionVerticalLimitNeg = directionVerticalLimitPos * -1;
 var movedX=centerX;
 var movedY=centerY;
 var touchable = 'createTouch' in document;
-if(touchable)
-{
 canvas.addEventListener('touchstart', onTouchStart, false);
 canvas.addEventListener('touchmove', onTouchMove, false);
 canvas.addEventListener('touchend', onTouchEnd, false);
-}
-else
-{
 canvas.addEventListener('mousedown', onMouseDown, false);
 canvas.addEventListener('mousemove', onMouseMove, false);
 canvas.addEventListener('mouseup', onMouseUp, false);
-}
 drawExternal();
 drawInternal(centerX, centerY);
 function drawExternal()
